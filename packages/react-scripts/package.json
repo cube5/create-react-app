@@ -1,8 +1,8 @@
 {
-  "name": "react-scripts",
+  "name": "react-scripts-nativebase",
   "version": "1.1.4",
-  "description": "Configuration and scripts for Create React App.",
-  "repository": "facebookincubator/create-react-app",
+  "description": "Custom configuration and scripts for Create React App with included support for NativeBase components.",
+  "repository": "cube5/create-react-app",
   "license": "MIT",
   "engines": {
     "node": ">=6"

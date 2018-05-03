@@ -104,6 +104,9 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      // Support for NativeBase components as in https://docs.nativebase.io/docs/GetStarted.html
+      'react-native/Libraries/Renderer/shims/ReactNativePropRegistry':
+        'react-native-web/dist/modules/ReactNativePropRegistry',
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
