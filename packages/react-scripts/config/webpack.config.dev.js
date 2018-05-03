@@ -166,7 +166,21 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
+            include: paths.appSrc.concat([
+              path.resolve(paths.appNodeModules, 'native-base-shoutem-theme'),
+              path.resolve(paths.appNodeModules, 'react-navigation'),
+              path.resolve(paths.appNodeModules, 'react-native-easy-grid'),
+              path.resolve(paths.appNodeModules, 'react-native-drawer'),
+              path.resolve(paths.appNodeModules, 'react-native-safe-area-view'),
+              path.resolve(paths.appNodeModules, 'react-native-vector-icons'),
+              path.resolve(
+                paths.appNodeModules,
+                'react-native-keyboard-aware-scroll-view'
+              ),
+              path.resolve(paths.appNodeModules, 'react-native-web'),
+              path.resolve(paths.appNodeModules, 'react-native-tab-view'),
+              path.resolve(paths.appNodeModules, 'static-container'),
+            ]),
             loader: require.resolve('babel-loader'),
             options: {
               // @remove-on-eject-begin
