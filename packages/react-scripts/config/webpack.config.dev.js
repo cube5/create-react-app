@@ -101,12 +101,12 @@ module.exports = {
         require.resolve('babel-runtime/package.json')
       ),
       // @remove-on-eject-end
-      // Support React Native Web
-      // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web',
       // Support for NativeBase components as in https://docs.nativebase.io/docs/GetStarted.html
       'react-native/Libraries/Renderer/shims/ReactNativePropRegistry':
         'react-native-web/dist/modules/ReactNativePropRegistry',
+      // Support React Native Web
+      // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
+      'react-native': 'react-native-web',
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -166,7 +166,8 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc.concat([
+            include: [
+              paths.appSrc,
               path.resolve(paths.appNodeModules, 'native-base-shoutem-theme'),
               path.resolve(paths.appNodeModules, 'react-navigation'),
               path.resolve(paths.appNodeModules, 'react-native-easy-grid'),
@@ -180,7 +181,7 @@ module.exports = {
               path.resolve(paths.appNodeModules, 'react-native-web'),
               path.resolve(paths.appNodeModules, 'react-native-tab-view'),
               path.resolve(paths.appNodeModules, 'static-container'),
-            ]),
+            ],
             loader: require.resolve('babel-loader'),
             options: {
               // @remove-on-eject-begin

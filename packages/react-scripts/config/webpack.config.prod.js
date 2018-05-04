@@ -153,7 +153,22 @@ module.exports = {
             loader: require.resolve('eslint-loader'),
           },
         ],
-        include: paths.appSrc,
+        include: [
+          paths.appSrc,
+          path.resolve(paths.appNodeModules, 'native-base-shoutem-theme'),
+          path.resolve(paths.appNodeModules, 'react-navigation'),
+          path.resolve(paths.appNodeModules, 'react-native-easy-grid'),
+          path.resolve(paths.appNodeModules, 'react-native-drawer'),
+          path.resolve(paths.appNodeModules, 'react-native-safe-area-view'),
+          path.resolve(paths.appNodeModules, 'react-native-vector-icons'),
+          path.resolve(
+            paths.appNodeModules,
+            'react-native-keyboard-aware-scroll-view'
+          ),
+          path.resolve(paths.appNodeModules, 'react-native-web'),
+          path.resolve(paths.appNodeModules, 'react-native-tab-view'),
+          path.resolve(paths.appNodeModules, 'static-container'),
+        ],
       },
       {
         // "oneOf" will traverse all following loaders until one will
@@ -173,21 +188,7 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc.concat([
-              path.resolve(paths.appNodeModules, 'native-base-shoutem-theme'),
-              path.resolve(paths.appNodeModules, 'react-navigation'),
-              path.resolve(paths.appNodeModules, 'react-native-easy-grid'),
-              path.resolve(paths.appNodeModules, 'react-native-drawer'),
-              path.resolve(paths.appNodeModules, 'react-native-safe-area-view'),
-              path.resolve(paths.appNodeModules, 'react-native-vector-icons'),
-              path.resolve(
-                paths.appNodeModules,
-                'react-native-keyboard-aware-scroll-view'
-              ),
-              path.resolve(paths.appNodeModules, 'react-native-web'),
-              path.resolve(paths.appNodeModules, 'react-native-tab-view'),
-              path.resolve(paths.appNodeModules, 'static-container'),
-            ]),
+            include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
               // @remove-on-eject-begin
